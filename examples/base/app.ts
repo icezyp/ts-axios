@@ -72,6 +72,37 @@ import axios from '../../src/index'
 // })
 
 //测试headers
+// axios({
+//     method: 'post',
+//     url: '/base/post',
+//     data: {
+//         a: 1,
+//         b: 2
+//     }
+// })
+
+// axios({
+//     method: 'post',
+//     url: '/base/post',
+//     headers: {
+//         'content-type': 'application/json',
+//         'Accept': 'application/json, text/plain, */*'
+//     },
+//     data: {
+//         a: 1,
+//         b: 2
+//     }
+// })
+
+// const paramsString = 'q=URLUtils.searchParams&topic=api'
+// const searchParams = new URLSearchParams(paramsString)
+// axios({
+//     method: 'post',
+//     url: '/base/post',
+//     data: searchParams
+// })
+
+//test promise
 axios({
     method: 'post',
     url: '/base/post',
@@ -79,25 +110,18 @@ axios({
         a: 1,
         b: 2
     }
+}).then(res => {
+    console.log(res)
 })
 
 axios({
     method: 'post',
     url: '/base/post',
-    headers: {
-        'content-type': 'application/json',
-        'Accept': 'application/json, text/plain, */*'
-    },
+    responseType: 'json',
     data: {
-        a: 1,
-        b: 2
+        c: 3,
+        d: 4
     }
-})
-
-const paramsString = 'q=URLUtils.searchParams&topic=api'
-const searchParams = new URLSearchParams(paramsString)
-axios({
-    method: 'post',
-    url: '/base/post',
-    data: searchParams
+}).then(res => {
+    console.log(res)
 })
